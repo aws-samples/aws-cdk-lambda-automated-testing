@@ -1,3 +1,16 @@
+/**********************************************************************************************************************
+ *  Copyright 2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.                                           *
+ *                                                                                                                    *
+ *  Licensed under the Amazon Software License (the "License"). You may not use this file except in compliance        *
+ *  with the License. A copy of the License is located at                                                             *
+ *                                                                                                                    *
+ *       http://aws.amazon.com/asl/                                                                                   *
+ *                                                                                                                    *
+ *  or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES *
+ *  OR CONDITIONS OF ANY KIND, express or implied. See the License for the specific language governing permissions    *
+ *  and limitations under the License.                                                                                *
+ **********************************************************************************************************************/
+
 /* eslint-disable unicorn/prefer-module */
 
 // :: this has to be above the imports, because this needs to be available
@@ -32,13 +45,14 @@ const MOCK_SCHEDULED_EVENT = {
 
 // :: ---
 
-beforeEach(() => delete process.env['TABLE_NAME'])
+beforeEach(() => (process.env['TABLE_NAME'] = 'sample-table-name'))
 beforeEach(() => {
   MOCK_PUT.mockReturnValue({ promise: () => Promise.resolve() })
 })
 
 afterEach(() => jest.useRealTimers())
 afterEach(() => jest.resetAllMocks())
+afterEach(() => delete process.env['TABLE_NAME'])
 
 it('bundles without errors', async () => {
   const codepath = path.join(__dirname, 'record-time.ts')

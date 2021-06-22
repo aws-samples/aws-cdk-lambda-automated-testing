@@ -12,6 +12,9 @@ extends:
   - plugin:unicorn/recommended
   - plugin:prettier/recommended
 
+plugins:
+  - header
+
 rules:
   '@typescript-eslint/no-empty-interface': off
 
@@ -23,3 +26,7 @@ rules:
       allowList:
         props: true
         Props: true
+
+  header/header:
+    - 2
+    - header.js
