@@ -1,4 +1,4 @@
-# lambda-cdk-tests
+# Automated, shared testing pipeline for AWS Lambda codefiles and AWS CDK constructs
 
 This repository illustrates how to set up a shared testing process for both
 [AWS Lambda][^1] functions, as well as the [AWS CDK][^2] constructs that describe how
@@ -93,7 +93,7 @@ See [CONTRIBUTING](./contributing.md) for more information.
 
 ## License
 
-This project is licensed under the Apache-2.0 License.
+This project is licensed under the MIT-0 license.
 
 [^1]: https://aws.amazon.com/lambda
 [^2]: https://aws.amazon.com/cdk
