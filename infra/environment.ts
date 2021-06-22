@@ -1,13 +1,24 @@
-/* eslint-disable unicorn/no-static-only-class */
+/**********************************************************************************************************************
+ *  Copyright 2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.                                           *
+ *                                                                                                                    *
+ *  Licensed under the Amazon Software License (the "License"). You may not use this file except in compliance        *
+ *  with the License. A copy of the License is located at                                                             *
+ *                                                                                                                    *
+ *       http://aws.amazon.com/asl/                                                                                   *
+ *                                                                                                                    *
+ *  or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES *
+ *  OR CONDITIONS OF ANY KIND, express or implied. See the License for the specific language governing permissions    *
+ *  and limitations under the License.                                                                                *
+ **********************************************************************************************************************/
 
-class Environment {
-  static get IS_PRODUCTION(): boolean {
+const Environment = {
+  get IS_PRODUCTION(): boolean {
     return process.env.NODE_ENV === 'production'
-  }
+  },
 
-  static get REGION(): string {
+  get REGION(): string {
     return process.env.AWS_REGION ?? 'ap-southeast-1'
-  }
+  },
 }
 
 export default Environment
