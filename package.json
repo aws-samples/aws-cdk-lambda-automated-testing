@@ -1,5 +1,5 @@
 {
-  "name": "sample-lambda-cdk-tests",
+  "name": "aws-lambda-and-cdk-testing",
   "version": "1.0.0",
   "private": true,
   "main": "index.js",
