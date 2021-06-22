@@ -1,5 +1,6 @@
 *.js
 !jest.config.js
+!header.js
 node_modules
 
 # CDK asset staging directory
