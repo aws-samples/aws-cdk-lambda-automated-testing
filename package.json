@@ -4,7 +4,7 @@
   "private": true,
   "main": "index.js",
   "author": "Richard Neil Ilagan <ilagan@amazon.com>",
-  "license": "Apache-2.0",
+  "license": "MIT-0",
   "scripts": {
     "test": "jest",
     "lint": "eslint './{code,infra}/**/*.{js,jsx,ts,tsx}' -f stylish",
