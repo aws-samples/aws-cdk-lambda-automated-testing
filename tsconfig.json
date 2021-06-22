@@ -1,0 +1,34 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "commonjs",
+    "lib": ["esnext"],
+    //
+    "baseUrl": ".",
+    "paths": {
+      "@code/*": ["code/*"],
+      "@stacks/*": ["infra/stacks/*"],
+      "@constructs/*": ["infra/constructs/*"]
+    },
+    //
+    "alwaysStrict": true,
+    "declaration": true,
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "inlineSourceMap": true,
+    "inlineSources": true,
+    "moduleResolution": "node",
+    "noFallthroughCasesInSwitch": false,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "strict": true,
+    "strictNullChecks": true,
+    "strictPropertyInitialization": false,
+    "typeRoots": ["./@types", "./node_modules/@types"]
+  },
+  "exclude": ["cdk.out", "node_modules"],
+  "include": ["**/*.ts"]
+}
