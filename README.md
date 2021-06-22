@@ -42,8 +42,7 @@ Primary code is organized accordingly:
 ### Prerequisites
 
 You will need to have **Node.js** installed on your environment to use this codebase.
-This was prepared using `v14.x`, but it should work with `v12.x` and higher.
-Review your installed version with `node --version`.
+This uses `node v14.x` — review your installed version with `node --version`.
 
 All of this codebase's dependencies are listed in `package.json`.
 Run the following command from your project root to install dependencies:
