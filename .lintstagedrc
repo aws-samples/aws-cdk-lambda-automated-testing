@@ -1,0 +1,3 @@
+{
+  "./{code,infra}/**/*.{js,jsx,ts,tsx}": "eslint --fix -f stylish"
+}
