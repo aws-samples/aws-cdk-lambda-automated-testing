@@ -1,7 +1,7 @@
 # Automated, shared testing pipeline for AWS Lambda codefiles and AWS CDK constructs
 
 This repository illustrates how to set up a shared testing process for both
-[AWS Lambda][^1] functions, as well as the [AWS CDK][^2] constructs that describe how
+[AWS Lambda][lambda] functions, as well as the [AWS CDK][cdk] constructs that describe how
 these are deployed onto the AWS Cloud.
 
 The same structure can be adapted for most anything that requires having to deploy
@@ -19,16 +19,16 @@ loose codefiles onto AWS resources (e.g. Lambda functions, Jupyter notebooks, et
 >
 > A healthy development pipeline will generally consist of testing both on and off-platforms.
 
-Testing in this codebase is done using [Jest][^4], which is the test runner installed
+Testing in this codebase is done using [Jest][jest], which is the test runner installed
 when you use the [AWS CDK CLI][aws-cdk] tool to [bootstrap a new project][cdk-init].
 
 ## Sample Application System
 
 ![Architecture](assets/archi.jpg)
 
-This codebase deploys a simple system: an [AWS Lambda][^5] function is saves the current date and
-time to an [Amazon DynamoDB][^6] table whenever it's triggered. This function is invoked every hour
-using an [Amazon EventBridge][^7] schedule.
+This codebase deploys a simple system: an [AWS Lambda][lambda] function is saves the current date and
+time to an [Amazon DynamoDB][dynamodb] table whenever it's triggered. This function is invoked every hour
+using an [Amazon EventBridge][eventbridge] schedule.
 
 ## Usage
 
@@ -37,7 +37,7 @@ using an [Amazon EventBridge][^7] schedule.
 Primary code is organized accordingly:
 
 - `code/` — loose codefiles (e.g. code files for Lambda functions, Jupyter notebooks, etc.)
-- `infra/` — AWS CDK constructs (e.g. this is your [IaC][^3] component, and what deploys your resources into AWS.)
+- `infra/` — AWS CDK constructs (e.g. this is your [IaC][iac] component, and what deploys your resources into AWS.)
 
 ### Prerequisites
 
@@ -58,7 +58,7 @@ npm install
 ### Running Tests
 
 This codebase is configured to treat any file `*.test.ts` or `*.spec.ts` as a test file,
-processed by [Jest][^4]. The test files are placed alongside the code files they're
+processed by [Jest][jest]. The test files are placed alongside the code files they're
 meant to test.
 
 > So `foo.test.ts` will be testing `foo.ts` (generally mocking everything else),
@@ -95,13 +95,11 @@ See [CONTRIBUTING](./contributing.md) for more information.
 
 This project is licensed under the MIT-0 license.
 
-[^1]: https://aws.amazon.com/lambda
-[^2]: https://aws.amazon.com/cdk
-[^3]: https://docs.aws.amazon.com/whitepapers/latest/modern-application-development-on-aws/managing-infrastructure-as-code.html
-[^4]: https://jestjs.io
-[^5]: https://aws.amazon.com/lambda
-[^6]: https://aws.amazon.com/dynamodb
-[^7]: https://aws.amazon.com/eventbridge
-
+[lambda]: https://aws.amazon.com/lambda
+[cdk]: https://aws.amazon.com/cdk
+[iac]: https://docs.aws.amazon.com/whitepapers/latest/modern-application-development-on-aws/managing-infrastructure-as-code.html
+[jest]: https://jestjs.io
+[dynamodb]: https://aws.amazon.com/dynamodb
+[eventbridge]: https://aws.amazon.com/eventbridge
 [cdk-init]: https://docs.aws.amazon.com/cdk/latest/guide/work-with-cdk-typescript.html#typescript-newproject
 [aws-cdk]: https://www.npmjs.com/package/aws-cdk
