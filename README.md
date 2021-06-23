@@ -15,20 +15,28 @@ loose codefiles onto AWS resources (e.g. Lambda functions, Jupyter notebooks, et
 >
 > It is important that we are able to verify as much of the logic and behavior of
 > systems as possible before we deploy them. This allows us to catch potential defects
-> much faster than if we were performing all testing on the target platform itself.
+> much faster than if we were performing all testing on the target platform itself,
+> after it has been deployed.
 >
 > A healthy development pipeline will generally consist of testing both on and off-platforms.
 
 Testing in this codebase is done using [Jest][jest], which is the test runner installed
 when you use the [AWS CDK CLI][aws-cdk] tool to [bootstrap a new project][cdk-init].
+This choice is mostly a matter of preference — you should be able to use your own
+choice of testing frameworks if you want to.
 
 ## Sample Application System
 
 ![Architecture](assets/archi.jpg)
 
-This codebase deploys a simple system: an [AWS Lambda][lambda] function is saves the current date and
-time to an [Amazon DynamoDB][dynamodb] table whenever it's triggered. This function is invoked every hour
-using an [Amazon EventBridge][eventbridge] schedule.
+This codebase is meant to deploy a simple system: an [AWS Lambda][lambda] function saves the current date and
+time to an [Amazon DynamoDB][dynamodb] table whenever it's triggered. This Lambda function
+is invoked every hour using an [Amazon EventBridge][eventbridge] schedule using a
+CRON expression.
+
+> **Important:** You _don't_ need to actually deploy this into your AWS account,
+> but you _can_ if you want to. All the tests illustrated here are built so that they
+> should be executable from your local environment.
 
 ## Usage
 
@@ -36,8 +44,8 @@ using an [Amazon EventBridge][eventbridge] schedule.
 
 Primary code is organized accordingly:
 
-- `code/` — loose codefiles (e.g. code files for Lambda functions, Jupyter notebooks, etc.)
-- `infra/` — AWS CDK constructs (e.g. this is your [IaC][iac] component, and what deploys your resources into AWS.)
+- `code/` — loose codefiles (e.g. files for Lambda functions, Jupyter notebooks, etc.)
+- `infra/` — AWS CDK constructs (e.g. this is your [IaC][iac] component, and is what deploys your resources into AWS.)
 
 ### Prerequisites
 
