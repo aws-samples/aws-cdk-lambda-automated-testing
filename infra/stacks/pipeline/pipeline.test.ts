@@ -24,6 +24,8 @@ beforeEach(() => {
 })
 
 it('synths without errors', () => {
-  const stack = new Pipeline(app, 'cicd-pipeline')
+  const stack = new Pipeline(app, 'cicd-pipeline', {
+    env: { region: 'ap-southeast-1' },
+  })
   SynthUtils.toCloudFormation(stack)
 })

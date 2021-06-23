@@ -9,6 +9,7 @@
     "test": "jest",
     "lint": "eslint './{code,infra}/**/*.{js,jsx,ts,tsx}' -f stylish",
     "cdk": "cdk",
+    "cdk:pipelines": "cdk -a 'npx ts-node --prefer-ts-exts -r tsconfig-paths/register infra/app-pipeline.ts'",
     "prepare": "husky install",
     "hooks:pre-commit": "lint-staged",
     "hooks:pre-push": "npm run test"

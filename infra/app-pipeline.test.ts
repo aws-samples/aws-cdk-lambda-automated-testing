@@ -17,6 +17,7 @@ beforeEach(() => {
 
 it('synths without errors', async () => {
   const { app } = await import('./app-pipeline')
+
   const stacks = app.node.children.filter((child) => child instanceof cdk.Stack)
 
   expect(stacks.length).toBeGreaterThan(0)
