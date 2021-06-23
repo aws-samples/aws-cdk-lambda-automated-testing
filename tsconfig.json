@@ -7,6 +7,7 @@
     "baseUrl": ".",
     "paths": {
       "@code/*": ["code/*"],
+      "@infra/*": ["infra/*"],
       "@stacks/*": ["infra/stacks/*"],
       "@constructs/*": ["infra/constructs/*"]
     },

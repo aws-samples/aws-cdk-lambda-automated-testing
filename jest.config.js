@@ -1,5 +1,9 @@
-/* eslint-disable unicorn/prefer-module */
+/*!
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: MIT-0
+ */
 
+// eslint-disable-next-line unicorn/prefer-module
 module.exports = {
   roots: ['<rootDir>/code', '<rootDir>/infra'],
   testMatch: ['**/*.{spec,test}.{js,ts}'],
@@ -18,6 +22,7 @@ module.exports = {
   // :: make sure this matches the `paths` setting in tsconfig.json
   moduleNameMapper: {
     '^@code/(.*)$': '<rootDir>/code/$1',
+    '^@infra/(.*)$': '<rootDir>/infra/$1',
     '^@constructs/(.*)$': '<rootDir>/infra/constructs/$1',
     '^@stacks/(.*)$': '<rootDir>/infra/stacks/$1',
   },
