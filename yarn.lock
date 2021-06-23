@@ -172,6 +172,23 @@
     "@aws-cdk/core" "1.109.0"
     constructs "^3.3.69"
 
+"@aws-cdk/aws-codedeploy@1.109.0":
+  version "1.109.0"
+  resolved "https://registry.yarnpkg.com/@aws-cdk/aws-codedeploy/-/aws-codedeploy-1.109.0.tgz#3b4ad4efa4839d14b852d71e9b62d7633f0eb8da"
+  integrity sha512-oR0uQXGX9dLe56uPNn7eSoK+8Rr5J898PhWfivGbYJMtiwt3EKgpmV2b48QH/vhjn7rjpf5wWPu9zqyn2ffVQA==
+  dependencies:
+    "@aws-cdk/aws-autoscaling" "1.109.0"
+    "@aws-cdk/aws-cloudwatch" "1.109.0"
+    "@aws-cdk/aws-ec2" "1.109.0"
+    "@aws-cdk/aws-elasticloadbalancing" "1.109.0"
+    "@aws-cdk/aws-elasticloadbalancingv2" "1.109.0"
+    "@aws-cdk/aws-iam" "1.109.0"
+    "@aws-cdk/aws-lambda" "1.109.0"
+    "@aws-cdk/aws-s3" "1.109.0"
+    "@aws-cdk/core" "1.109.0"
+    "@aws-cdk/custom-resources" "1.109.0"
+    constructs "^3.3.69"
+
 "@aws-cdk/aws-codeguruprofiler@1.109.0":
   version "1.109.0"
   resolved "https://registry.yarnpkg.com/@aws-cdk/aws-codeguruprofiler/-/aws-codeguruprofiler-1.109.0.tgz#8ea92fe1592041adfcccbf07065fa302e2d716e7"
@@ -181,7 +198,33 @@
     "@aws-cdk/core" "1.109.0"
     constructs "^3.3.69"
 
-"@aws-cdk/aws-codepipeline@1.109.0":
+"@aws-cdk/aws-codepipeline-actions@1.109", "@aws-cdk/aws-codepipeline-actions@1.109.0":
+  version "1.109.0"
+  resolved "https://registry.yarnpkg.com/@aws-cdk/aws-codepipeline-actions/-/aws-codepipeline-actions-1.109.0.tgz#616e4b3919071944c69f03534979512e4a8717be"
+  integrity sha512-uYywQqSkmDlmMKc4I/IcyeVjpMt/1IikEdmSZM8F8TQmdD7iDr77ynF8o7PQuZGNLZ7CJ7L6/FEBA4bM2wi7gg==
+  dependencies:
+    "@aws-cdk/aws-cloudformation" "1.109.0"
+    "@aws-cdk/aws-codebuild" "1.109.0"
+    "@aws-cdk/aws-codecommit" "1.109.0"
+    "@aws-cdk/aws-codedeploy" "1.109.0"
+    "@aws-cdk/aws-codepipeline" "1.109.0"
+    "@aws-cdk/aws-ec2" "1.109.0"
+    "@aws-cdk/aws-ecr" "1.109.0"
+    "@aws-cdk/aws-ecs" "1.109.0"
+    "@aws-cdk/aws-events" "1.109.0"
+    "@aws-cdk/aws-events-targets" "1.109.0"
+    "@aws-cdk/aws-iam" "1.109.0"
+    "@aws-cdk/aws-kms" "1.109.0"
+    "@aws-cdk/aws-lambda" "1.109.0"
+    "@aws-cdk/aws-s3" "1.109.0"
+    "@aws-cdk/aws-sns" "1.109.0"
+    "@aws-cdk/aws-sns-subscriptions" "1.109.0"
+    "@aws-cdk/aws-stepfunctions" "1.109.0"
+    "@aws-cdk/core" "1.109.0"
+    case "1.6.3"
+    constructs "^3.3.69"
+
+"@aws-cdk/aws-codepipeline@1.109", "@aws-cdk/aws-codepipeline@1.109.0":
   version "1.109.0"
   resolved "https://registry.yarnpkg.com/@aws-cdk/aws-codepipeline/-/aws-codepipeline-1.109.0.tgz#973e17359cd91e35801f64abe8e2de3caccf41a8"
   integrity sha512-8a0iG+JqYDYJbT4eWc7F7x81VpWU3102WB1Wx0cbFs6jcW2IORsKgG3cd63RRCHKw9ISLl6kg4v1mvhBKoPGgg==
@@ -341,7 +384,7 @@
     "@aws-cdk/region-info" "1.109.0"
     constructs "^3.3.69"
 
-"@aws-cdk/aws-events-targets@1.109":
+"@aws-cdk/aws-events-targets@1.109", "@aws-cdk/aws-events-targets@1.109.0":
   version "1.109.0"
   resolved "https://registry.yarnpkg.com/@aws-cdk/aws-events-targets/-/aws-events-targets-1.109.0.tgz#c4aff240486176db7f6e92b78783b60a080ecbfd"
   integrity sha512-FXLzx9HLzuyR02XkgcpWuSQGcC7b2ukZCdqkEgTUExRd2oxUsae4A3qZ1G2k9GmiE8YEx1qkK0IrAvL681JgWA==
@@ -691,6 +734,23 @@
   dependencies:
     "@aws-cdk/cloud-assembly-schema" "1.109.0"
     semver "^7.3.5"
+
+"@aws-cdk/pipelines@1.109":
+  version "1.109.0"
+  resolved "https://registry.yarnpkg.com/@aws-cdk/pipelines/-/pipelines-1.109.0.tgz#3e0abb1c78cee01b4793fce1e038f8770ccae59a"
+  integrity sha512-tsXCB90O60+0tJxmgbIxPZAq5O97QZ8wEWNSjHRrQ8VsPx3gKxQ7146ULtxbKBhTEKW0/3zeZJc4Um8HWIaLEA==
+  dependencies:
+    "@aws-cdk/aws-codebuild" "1.109.0"
+    "@aws-cdk/aws-codepipeline" "1.109.0"
+    "@aws-cdk/aws-codepipeline-actions" "1.109.0"
+    "@aws-cdk/aws-ec2" "1.109.0"
+    "@aws-cdk/aws-events" "1.109.0"
+    "@aws-cdk/aws-iam" "1.109.0"
+    "@aws-cdk/aws-s3-assets" "1.109.0"
+    "@aws-cdk/cloud-assembly-schema" "1.109.0"
+    "@aws-cdk/core" "1.109.0"
+    "@aws-cdk/cx-api" "1.109.0"
+    constructs "^3.3.69"
 
 "@aws-cdk/region-info@1.109.0":
   version "1.109.0"
@@ -1915,6 +1975,11 @@ caniuse-lite@^1.0.30001219:
   version "1.0.30001237"
   resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001237.tgz#4b7783661515b8e7151fc6376cfd97f0e427b9e5"
   integrity sha512-pDHgRndit6p1NR2GhzMbQ6CkRrp4VKuSsqbcLeOQppYPKOYkKT/6ZvZDvKJUqcmtyWIAHuZq3SVS2vc1egCZzw==
+
+case@1.6.3:
+  version "1.6.3"
+  resolved "https://registry.yarnpkg.com/case/-/case-1.6.3.tgz#0a4386e3e9825351ca2e6216c60467ff5f1ea1c9"
+  integrity sha512-mzDSXIPaFwVDvZAHqZ9VlbyF4yyXRuX6IvB06WvPYkqJVO24kX1PPhv9bfpKNFZyxYFmmgo03HUiD8iklmJYRQ==
 
 cdk-assets@1.109.0:
   version "1.109.0"
