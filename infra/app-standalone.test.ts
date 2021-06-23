@@ -8,7 +8,7 @@ import { SynthUtils } from '@aws-cdk/assert'
 // :: ---
 
 it('synths without errors', async () => {
-  const { app } = await import('./app')
+  const { app } = await import('./app-standalone')
   const stacks = app.node.children.filter((child) => child instanceof cdk.Stack)
 
   expect(stacks.length).toBeGreaterThan(0)

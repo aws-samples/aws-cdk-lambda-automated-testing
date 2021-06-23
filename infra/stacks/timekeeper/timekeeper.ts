@@ -33,7 +33,7 @@ class Timekeeper extends cdk.Stack {
     props.timetable.grantReadWriteData(timekeeperFunction)
 
     new events.Rule(this, 'hourly-trigger', {
-      schedule: events.Schedule.expression('0 * * * ? *'),
+      schedule: events.Schedule.expression('cron(0 * * * ? *)'),
       targets: [new targets.LambdaFunction(timekeeperFunction)],
     })
   }
