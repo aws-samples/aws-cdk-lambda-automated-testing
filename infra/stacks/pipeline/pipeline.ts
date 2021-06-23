@@ -6,8 +6,6 @@ import * as cdk from '@aws-cdk/core'
 import * as pipelines from '@aws-cdk/pipelines'
 import * as codepipeline from '@aws-cdk/aws-codepipeline'
 
-import Environment from '@infra/environment'
-
 import SourceAction from './resources/source-action'
 import AppStage from './resources/app-stage'
 
@@ -39,10 +37,14 @@ class Pipeline extends cdk.Stack {
       //    See `package.json` for what these scripts perform.
       testCommands: ['yarn test'],
       environmentVariables: {
-        PIPELINES_OAUTH_TOKEN_NAME: { value: '-' },
-        PIPELINES_SOURCE_OWNER: { value: '-' },
-        PIPELINES_SOURCE_REPOSITORY: { value: '-' },
-        PIPELINES_SOURCE_BRANCH: { value: '-' },
+        PIPELINES_OAUTH_TOKEN_NAME: {
+          value: process.env.PIPELINES_OAUTH_TOKEN_NAME,
+        },
+        PIPELINES_SOURCE_OWNER: { value: process.env.PIPELINES_SOURCE_OWNER },
+        PIPELINES_SOURCE_REPOSITORY: {
+          value: process.env.PIPELINES_SOURCE_REPOSITORY,
+        },
+        PIPELINES_SOURCE_BRANCH: { value: process.env.PIPELINES_SOURCE_BRANCH },
       },
     })
 
