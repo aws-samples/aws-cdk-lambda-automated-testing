@@ -11,4 +11,4 @@ import AppStackset from '@constructs/app-stackset'
 // :: ---
 
 export const app = new cdk.App()
-new AppStackset(app, 'app-stackset')
+new AppStackset(app)

@@ -20,7 +20,7 @@ class SourceAction extends cdk.Construct {
 
     // :: Change this to match your choice of source code provider.
     this.action = new actions.GitHubSourceAction({
-      actionName: 'github-main-branch-updated',
+      actionName: 'github-branch-updated',
       output: props.outputArtifact,
 
       /* eslint-disable @typescript-eslint/no-non-null-assertion */
