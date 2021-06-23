@@ -36,6 +36,14 @@ class Pipeline extends cdk.Stack {
       //    it is actually deployed.
       //    See `package.json` for what these scripts perform.
       testCommands: ['yarn test'],
+
+      // :: Interestingly enough, the build process will attempt to synthesize the
+      //    entire CDK app --- including this pipeline --- so these env variables
+      //    still need to be included, despite them (most probably) not being needed
+      //    anymore at that point.
+      //
+      //    If these are not set, then the CDK synth process will fail because of
+      //    not meeting validation checks.
       environmentVariables: {
         PIPELINES_OAUTH_TOKEN_NAME: {
           value: process.env.PIPELINES_OAUTH_TOKEN_NAME,
