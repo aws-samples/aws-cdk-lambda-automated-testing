@@ -108,7 +108,7 @@ it('has an hourly trigger rule', () => {
   const targetId = Capture.aString()
 
   expect(template).toHaveResourceLike('AWS::Events::Rule', {
-    ScheduleExpression: stringLike(`0 \* \* \* * \*`),
+    ScheduleExpression: stringLike(`cron(0 \* \* \* * \*)`),
     State: 'ENABLED',
     Targets: [
       {
