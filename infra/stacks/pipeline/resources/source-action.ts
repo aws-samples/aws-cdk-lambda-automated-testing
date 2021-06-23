@@ -18,8 +18,6 @@ class SourceAction extends cdk.Construct {
   constructor(scope: cdk.Construct, id: string, props: SourceActionProps) {
     super(scope, id)
 
-    console.log(process.env.PIPELINES_OAUTH_TOKEN_NAME)
-
     // :: Change this to match your choice of source code provider.
     this.action = new actions.GitHubSourceAction({
       actionName: 'github-main-branch-updated',

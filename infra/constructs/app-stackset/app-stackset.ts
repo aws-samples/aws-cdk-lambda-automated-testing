@@ -11,8 +11,8 @@ import Environment from '@infra/environment'
 // :: ---
 
 class AppStackset extends cdk.Construct {
-  constructor(app: cdk.App, id: string) {
-    super(app, id)
+  constructor(scope: cdk.Construct, id: string) {
+    super(scope, id)
 
     // :: ---
 
@@ -20,11 +20,11 @@ class AppStackset extends cdk.Construct {
       region: Environment.REGION,
     }
 
-    const datastore = new DataStore(app, 'datastore', {
+    const datastore = new DataStore(scope, 'datastore', {
       env: COMMON_ENVIRONMENT,
     })
 
-    new Timekeeper(app, 'timekeeper', {
+    new Timekeeper(scope, 'timekeeper', {
       env: COMMON_ENVIRONMENT,
       timetable: datastore.table,
     })

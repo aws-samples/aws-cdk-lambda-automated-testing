@@ -5,9 +5,9 @@
 import * as cdk from '@aws-cdk/core'
 import * as pipelines from '@aws-cdk/pipelines'
 import * as codepipeline from '@aws-cdk/aws-codepipeline'
-import * as actions from '@aws-cdk/aws-codepipeline-actions'
 
 import SourceAction from './resources/source-action'
+import AppStage from './resources/app-stage'
 
 // :: ---
 
@@ -28,7 +28,7 @@ class Pipeline extends cdk.Stack {
       outputArtifact: sourceArtifact,
     })
 
-    new pipelines.CdkPipeline(this, 'cdk-pipeline', {
+    const pipeline = new pipelines.CdkPipeline(this, 'cdk-pipeline', {
       pipelineName: 'sample-application-pipeline',
       cloudAssemblyArtifact,
 
@@ -43,6 +43,8 @@ class Pipeline extends cdk.Stack {
         testCommands: ['yarn lint', 'yarn test'],
       }),
     })
+
+    pipeline.addApplicationStage(new AppStage(this, 'production-stage'))
   }
 }
 
