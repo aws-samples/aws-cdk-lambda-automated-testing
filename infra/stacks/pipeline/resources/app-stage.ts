@@ -21,7 +21,7 @@ class AppStage extends cdk.Stage {
     //    project `cdk.json` context file) if we want to use CDK Pipelines.
     this.node.setContext('@aws-cdk/core:newStyleStackSynthesis', true)
 
-    new AppStackset(this, 'app-stackset')
+    new AppStackset(this)
   }
 }
 

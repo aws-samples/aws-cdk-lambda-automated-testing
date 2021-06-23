@@ -26,22 +26,24 @@ class Pipeline extends cdk.Stack {
 
     const sourceAction = new SourceAction(this, 'source-action', {
       outputArtifact: sourceArtifact,
+    }).action
+
+    const synthAction = pipelines.SimpleSynthAction.standardYarnSynth({
+      sourceArtifact,
+      cloudAssemblyArtifact,
+
+      // :: These will make sure the source passes validation before
+      //    it is actually deployed.
+      //    See `package.json` for what these scripts perform.
+      testCommands: ['yarn test'],
     })
 
     const pipeline = new pipelines.CdkPipeline(this, 'cdk-pipeline', {
       pipelineName: 'sample-application-pipeline',
       cloudAssemblyArtifact,
 
-      sourceAction: sourceAction.action,
-      synthAction: pipelines.SimpleSynthAction.standardYarnSynth({
-        sourceArtifact,
-        cloudAssemblyArtifact,
-
-        // :: These will make sure the source passes validation before
-        //    it is actually deployed.
-        //    See `package.json` for what these scripts perform.
-        testCommands: ['yarn lint', 'yarn test'],
-      }),
+      sourceAction: sourceAction,
+      synthAction,
     })
 
     pipeline.addApplicationStage(new AppStage(this, 'production-stage'))

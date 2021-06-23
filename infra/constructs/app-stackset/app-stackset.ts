@@ -10,12 +10,8 @@ import Environment from '@infra/environment'
 
 // :: ---
 
-class AppStackset extends cdk.Construct {
-  constructor(scope: cdk.Construct, id: string) {
-    super(scope, id)
-
-    // :: ---
-
+class AppStackset {
+  constructor(scope: cdk.Construct) {
     const COMMON_ENVIRONMENT: cdk.Environment = {
       region: Environment.REGION,
     }
