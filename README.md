@@ -1,5 +1,8 @@
 # Automated, shared testing pipeline for AWS Lambda codefiles and AWS CDK constructs
 
+![aws-cdk](https://img.shields.io/badge/AWS_Cloud_Development_Kit-1.109-ff9900?style=flat-square&labelColor=232f3e)
+![language](https://img.shields.io/badge/language-typescript-3178c6?style=flat-square)
+
 This repository illustrates how to set up a shared testing process for both
 [AWS Lambda][lambda] functions, as well as the [AWS CDK][cdk] constructs that describe how
 these are deployed onto the AWS Cloud.
