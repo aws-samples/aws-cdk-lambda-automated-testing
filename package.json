@@ -19,7 +19,7 @@
     "json5": "^2.2.2"
   },
   "devDependencies": {
-    "@aws-cdk/assert": "^2.63.2",
+    "@aws-cdk/assert": "1.191.0",
     "@types/jest": "^26.0.23",
     "@types/node": "^15.12.2",
     "@types/uuid": "^8.3.0",
