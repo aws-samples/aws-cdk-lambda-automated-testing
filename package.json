@@ -15,8 +15,9 @@
     "hooks:pre-push": "npm run test"
   },
   "resolutions": {
-    "minimatch": "^3.0.5",
-    "json5": "^2.2.2"
+    "minimatch": "3.1.2",
+    "json5": "2.2.3",
+    "pac-resolver": "4.0.0"
   },
   "devDependencies": {
     "@aws-cdk/assert": "1.191.0",
