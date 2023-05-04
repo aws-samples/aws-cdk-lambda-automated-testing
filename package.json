@@ -17,7 +17,8 @@
   "resolutions": {
     "minimatch": "3.1.2",
     "json5": "2.2.3",
-    "pac-resolver": "4.0.0"
+    "pac-resolver": "4.0.0",
+    "xml2js": "0.5.0"
   },
   "devDependencies": {
     "@aws-cdk/assert": "1.191.0",
