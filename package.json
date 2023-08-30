@@ -17,8 +17,8 @@
   "resolutions": {
     "minimatch": "3.1.2",
     "json5": "2.2.3",
-    "pac-resolver": "5.0.0",
-    "degenerator": "3.0.1",
+    "pac-resolver": "7.0.0",
+    "degenerator": "5.0.1",
     "xml2js": "0.5.0",
     "netmask": "2.0.1"
   },
